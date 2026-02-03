@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://ccyv6aq182n0"]
+
+[ext_resource type="Script" uid="uid://dohk56yo7r7ll" path="res://scripts/asteroid.gd" id="1_mhjcm"]
+[ext_resource type="Texture2D" uid="uid://bwso6uxesqmfd" path="res://assets/sprites/rock-big.png" id="1_r0lib"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mhjcm"]
+radius = 81.58492
+
+[node name="BigAsteroid" type="Area2D" unique_id=1176815964 groups=["asteroides"]]
+z_index = 1
+scale = Vector2(0.7, 0.7)
+script = ExtResource("1_mhjcm")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=956414357]
+texture = ExtResource("1_r0lib")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=98535611]
+position = Vector2(0, 3.62)
+shape = SubResource("CircleShape2D_mhjcm")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=2055138301]
+position = Vector2(165.71428, 0)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

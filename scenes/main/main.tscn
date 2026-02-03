@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://du7cbvrpdyc5p"]
+
+[ext_resource type="Texture2D" uid="uid://dfhinowmubd5y" path="res://assets/sprites/background.png" id="1_hyk8p"]
+[ext_resource type="PackedScene" uid="uid://dg8vknnylcg5p" path="res://scenes/player.tscn" id="2_k2fmo"]
+[ext_resource type="PackedScene" uid="uid://cmykwu3xxtt0v" path="res://scenes/laser.tscn" id="3_hujxm"]
+[ext_resource type="Script" uid="uid://d3y1fbfei5i6w" path="res://scenes/main/asteroid_spawner.gd" id="3_k2fmo"]
+[ext_resource type="PackedScene" uid="uid://ccyv6aq182n0" path="res://scenes/big_asteroid.tscn" id="3_l3cfh"]
+[ext_resource type="PackedScene" uid="uid://dyj1tocd0r5d4" path="res://scenes/medium_asteroid.tscn" id="5_ow5a4"]
+[ext_resource type="PackedScene" uid="uid://brf3x2kqwoiid" path="res://scenes/small_asteroid.tscn" id="6_hujxm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k2fmo"]
+size = Vector2(1290, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l3cfh"]
+size = Vector2(20.5, 776.5)
+
+[node name="Main" type="Node2D" unique_id=583419503]
+
+[node name="Background" type="Sprite2D" parent="." unique_id=87999928]
+position = Vector2(656, 334)
+texture = ExtResource("1_hyk8p")
+
+[node name="Player" parent="." unique_id=1213775496 instance=ExtResource("2_k2fmo")]
+z_index = 1
+position = Vector2(117, 325)
+laser_scene = ExtResource("3_hujxm")
+
+[node name="TimerShoot" type="Timer" parent="Player" unique_id=1012675378]
+wait_time = 0.5
+
+[node name="Walls" type="Node2D" parent="." unique_id=1607150892]
+
+[node name="TopWall" type="StaticBody2D" parent="Walls" unique_id=777617197]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/TopWall" unique_id=438171957]
+position = Vector2(641, -16)
+shape = SubResource("RectangleShape2D_k2fmo")
+
+[node name="BotonWall" type="StaticBody2D" parent="Walls" unique_id=955653059]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/BotonWall" unique_id=72271822]
+position = Vector2(641, 739)
+shape = SubResource("RectangleShape2D_k2fmo")
+
+[node name="LeftWall" type="StaticBody2D" parent="Walls" unique_id=890626879]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/LeftWall" unique_id=2134984518]
+position = Vector2(-21.25, 361.75)
+shape = SubResource("RectangleShape2D_l3cfh")
+
+[node name="RightWall" type="StaticBody2D" parent="Walls" unique_id=140861856]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/RightWall" unique_id=240157116]
+position = Vector2(1302, 361.75)
+shape = SubResource("RectangleShape2D_l3cfh")
+
+[node name="AsteroidSpawner" type="Marker2D" parent="." unique_id=432488335]
+position = Vector2(1416, 365)
+script = ExtResource("3_k2fmo")
+asteroids_scenes = Array[PackedScene]([ExtResource("3_l3cfh"), ExtResource("5_ow5a4"), ExtResource("6_hujxm")])
+
+[node name="Timer" type="Timer" parent="AsteroidSpawner" unique_id=858255695]
+autostart = true
+
+[node name="UILayer" type="CanvasLayer" parent="." unique_id=545796681]
+
+[connection signal="timeout" from="Player/TimerShoot" to="Player" method="_on_timer_timeout"]
+[connection signal="timeout" from="AsteroidSpawner/Timer" to="AsteroidSpawner" method="_on_timer_timeout"]

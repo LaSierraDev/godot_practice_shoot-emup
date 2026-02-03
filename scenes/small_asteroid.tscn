@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://brf3x2kqwoiid"]
+
+[ext_resource type="Script" uid="uid://dohk56yo7r7ll" path="res://scripts/asteroid.gd" id="1_asb04"]
+[ext_resource type="Texture2D" uid="uid://cn5ivsrshasoy" path="res://assets/sprites/rock-small.png" id="1_j6bfp"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j6bfp"]
+radius = 31.8904
+height = 69.616936
+
+[node name="SmallAsteroid" type="Area2D" unique_id=92668777 groups=["asteroides"]]
+script = ExtResource("1_asb04")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=715255033]
+texture = ExtResource("1_j6bfp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1611738666]
+position = Vector2(0, -2)
+rotation = 0.85346603
+shape = SubResource("CapsuleShape2D_j6bfp")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1295847024]
+position = Vector2(88, 0)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

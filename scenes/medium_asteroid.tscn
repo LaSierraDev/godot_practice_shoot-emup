@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://dyj1tocd0r5d4"]
+
+[ext_resource type="Texture2D" uid="uid://dw78jca620mm" path="res://assets/sprites/rock-medium.png" id="1_k2g2w"]
+[ext_resource type="Script" uid="uid://dohk56yo7r7ll" path="res://scripts/asteroid.gd" id="1_p71un"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k2g2w"]
+radius = 50.876347
+height = 115.5986
+
+[node name="MediumAsteroid" type="Area2D" unique_id=1089089069]
+script = ExtResource("1_p71un")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1474535063]
+texture = ExtResource("1_k2g2w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1338562195]
+position = Vector2(-4, -2.3841858e-07)
+rotation = -1.0367255
+shape = SubResource("CapsuleShape2D_k2g2w")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1776802267]
+position = Vector2(122, 0)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
