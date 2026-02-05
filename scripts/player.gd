@@ -36,11 +36,11 @@ func _timer_control() -> void:
 	if !can_it_shoot:
 		timer_shoot.start()
 
-func _on_timer_timeout() -> void:
-	can_it_shoot = true
-	timer_shoot.stop()
-
 func _on_detection_area_area_entered(area: Area2D) -> void:
 	if area.is_in_group("asteroides"):
 		GameManager.game_over()
 		queue_free()
+
+func _on_timer_shoot_timeout() -> void:
+	can_it_shoot = true
+	timer_shoot.stop()

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cjitwvyiho5u5"]
 
 [ext_resource type="LabelSettings" uid="uid://0upf7mybrhu2" path="res://scenes/ui/score_label_settings.tres" id="1_ac3bb"]
-[ext_resource type="Script" uid="uid://bwlbsxc6v2kye" path="res://scripts/score_label.gd" id="2_3aff7"]
+[ext_resource type="Script" uid="uid://bwlbsxc6v2kye" path="res://scripts/ui/score_label.gd" id="2_3aff7"]
 
 [node name="HUD" type="Control" unique_id=1923474690]
 layout_mode = 3

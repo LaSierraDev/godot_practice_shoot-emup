@@ -14,10 +14,16 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	restart_game()
 
+func restart_game():
+	if is_game_over and Input.is_action_just_pressed("Shoot"):
+		get_tree().reload_current_scene()
+		is_game_over = false
+		score = 0
 func add_score(points: int) -> void:
-	score += points
+	if not is_game_over:
+		score += points
 
 func game_over() -> void:
 	is_game_over = true
