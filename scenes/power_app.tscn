@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://c40nx3270ul2m"]
+
+[ext_resource type="Texture2D" uid="uid://b8hlol2ng1lgr" path="res://assets/sprites/powerupYellow_bolt.png" id="1_eb56l"]
+[ext_resource type="Script" uid="uid://d10mhsikbeasm" path="res://scripts/power_app.gd" id="1_pt8v8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pt8v8"]
+size = Vector2(37, 36)
+
+[node name="PowerApp" type="Area2D" unique_id=1641340185]
+script = ExtResource("1_pt8v8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=868933945]
+texture = ExtResource("1_eb56l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1617985933]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_pt8v8")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

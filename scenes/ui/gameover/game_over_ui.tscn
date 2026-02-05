@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://b4e1tmp7nkjec" path="res://scripts/ui/game_over_ui.gd" id="1_1cqlo"]
 [ext_resource type="FontFile" uid="uid://bmyiiqiuxm0yb" path="res://assets/fonts/Zyzol.otf" id="1_6u1iv"]
-[ext_resource type="LabelSettings" uid="uid://d1lkiifqswh0n" path="res://scenes/ui/gameover_label_settings.tres" id="1_g46s0"]
-[ext_resource type="LabelSettings" uid="uid://0upf7mybrhu2" path="res://scenes/ui/score_label_settings.tres" id="2_062jk"]
+[ext_resource type="LabelSettings" uid="uid://d1lkiifqswh0n" path="res://scenes/ui/label_settings/gameover_label_settings.tres" id="1_g46s0"]
+[ext_resource type="LabelSettings" uid="uid://0upf7mybrhu2" path="res://scenes/ui/label_settings/score_label_settings.tres" id="2_062jk"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_062jk"]
 font = ExtResource("1_6u1iv")

@@ -5,6 +5,7 @@ extends Marker2D
 @export var asteroids_scenes: Array[PackedScene]
 @export var min_random_y: int = 50
 @export var max_random_y: int = 650
+#@export var spawned_asteroid_count: int = 3
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -19,4 +20,7 @@ func _create_asteroid() -> void:
 	_asteroid_instance.global_position.y = random_y
 
 func _on_timer_timeout() -> void:
+	#for i in range(spawned_asteroid_count):
+		#_create_asteroid()
 	_create_asteroid()
+	

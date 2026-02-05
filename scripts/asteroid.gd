@@ -29,7 +29,7 @@ func _process(delta: float) -> void:
 	position.x += speed * delta
 	sprite_2d.rotation_degrees += speed_rotation * delta
 
-func _destroy_me() -> void: 
+func destroy_me() -> void: 
 		queue_free()
 
 func _on_area_entered(area: Area2D) -> void:
@@ -40,8 +40,8 @@ func _on_area_entered(area: Area2D) -> void:
 		GameManager.add_score(points)
 	
 	if is_laser or is_player:
-		_destroy_me()
+		destroy_me()
 
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 	GameManager.game_over()
-	_destroy_me()
+	destroy_me()

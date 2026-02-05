@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://btjjmtc1x0kuc"]
+
+[ext_resource type="Script" uid="uid://bsv44qxk3pvfy" path="res://scripts/spawner/power_up_spawner.gd" id="1_cep2p"]
+[ext_resource type="PackedScene" uid="uid://c40nx3270ul2m" path="res://scenes/power_app.tscn" id="2_qf8m7"]
+
+[node name="PowerUpSpawner" type="Node2D" unique_id=2071633318]
+script = ExtResource("1_cep2p")
+power_up_escene = ExtResource("2_qf8m7")
+
+[node name="TimerSpawn" type="Timer" parent="." unique_id=1755851077]
+wait_time = 5.0
+autostart = true
+
+[connection signal="timeout" from="TimerSpawn" to="." method="_on_timer_spawn_timeout"]
