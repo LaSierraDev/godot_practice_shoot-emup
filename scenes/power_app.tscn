@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pt8v8"]
 size = Vector2(37, 36)
 
-[node name="PowerApp" type="Area2D" unique_id=1641340185]
+[node name="PowerApp" type="Area2D" unique_id=1641340185 groups=["power_up"]]
 script = ExtResource("1_pt8v8")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=868933945]
