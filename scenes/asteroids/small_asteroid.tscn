@@ -4,21 +4,23 @@
 [ext_resource type="Texture2D" uid="uid://cn5ivsrshasoy" path="res://assets/sprites/rock-small.png" id="1_j6bfp"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_j6bfp"]
-radius = 31.8904
-height = 69.616936
+radius = 35.36965
+height = 70.7393
 
 [node name="SmallAsteroid" type="Area2D" unique_id=92668777 groups=["asteroides"]]
 script = ExtResource("1_asb04")
+points = 15.0
+metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=715255033]
 texture = ExtResource("1_j6bfp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1611738666]
 position = Vector2(0, -2)
-rotation = 0.85346603
 shape = SubResource("CapsuleShape2D_j6bfp")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1295847024]
 position = Vector2(88, 0)
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

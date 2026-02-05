@@ -19,10 +19,18 @@ run/main_scene="uid://du7cbvrpdyc5p"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GameManager="*uid://cxe1xsecxpjep"
+
 [display]
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/assetplus/plugin.cfg")
 
 [global_group]
 

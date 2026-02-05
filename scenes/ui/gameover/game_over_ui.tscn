@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://cqwpmh7eosuq6"]
+
+[ext_resource type="Script" uid="uid://b4e1tmp7nkjec" path="res://scenes/ui/gameover/game_over_ui.gd" id="1_1cqlo"]
+[ext_resource type="FontFile" uid="uid://bmyiiqiuxm0yb" path="res://assets/fonts/Zyzol.otf" id="1_6u1iv"]
+[ext_resource type="LabelSettings" uid="uid://d1lkiifqswh0n" path="res://scenes/ui/gameover_label_settings.tres" id="1_g46s0"]
+[ext_resource type="LabelSettings" uid="uid://0upf7mybrhu2" path="res://scenes/ui/score_label_settings.tres" id="2_062jk"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_062jk"]
+font = ExtResource("1_6u1iv")
+font_color = Color(1, 0.19999999, 0.19999999, 0.7058824)
+
+[node name="GameOverUI" type="Control" unique_id=524891054]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1cqlo")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1337937648]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=1632990903]
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=345734039]
+layout_mode = 2
+
+[node name="GameOverLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=949336725]
+layout_mode = 2
+text = "GAME OVER"
+label_settings = ExtResource("1_g46s0")
+
+[node name="PressSpaceLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=719448621]
+layout_mode = 2
+text = "Press space to restart"
+label_settings = ExtResource("2_062jk")
+horizontal_alignment = 1
+
+[node name="YouScoreLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1935667507]
+layout_mode = 2
+text = "Your score: "
+label_settings = SubResource("LabelSettings_062jk")
+horizontal_alignment = 1

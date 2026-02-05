@@ -8,10 +8,12 @@ extends CharacterBody2D
 var y_input: float
 var x_input: float
 
-
 var can_it_shoot: bool = true
 
 func _physics_process(delta: float) -> void:
+	if GameManager.is_game_over:
+		return
+	
 	if Input.is_action_just_pressed("Shoot") and can_it_shoot:
 		can_it_shoot = false
 		create_laser()
@@ -22,7 +24,7 @@ func _physics_process(delta: float) -> void:
 func _process_inputs() -> void:
 	y_input= Input.get_axis("Up","Down")
 	x_input= Input.get_axis("Left", "Right")
-	velocity = Vector2(x_input * speed, y_input * speed)
+	self.velocity = Vector2(x_input * speed, y_input * speed)
 
 func create_laser() -> void: 
 	var _laser = laser_scene.instantiate()
@@ -40,4 +42,5 @@ func _on_timer_timeout() -> void:
 
 func _on_detection_area_area_entered(area: Area2D) -> void:
 	if area.is_in_group("asteroides"):
+		GameManager.game_over()
 		queue_free()

@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var bullet_velocity: float = 1000
+@export var bullet_velocity: float = 800
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

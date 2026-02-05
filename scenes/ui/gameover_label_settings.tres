@@ -1,0 +1,11 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://d1lkiifqswh0n"]
+
+[ext_resource type="FontFile" uid="uid://bmyiiqiuxm0yb" path="res://assets/fonts/Zyzol.otf" id="1_mqx7r"]
+
+[resource]
+font = ExtResource("1_mqx7r")
+font_size = 70
+font_color = Color(1, 0.19999999, 0.19999999, 1)
+shadow_size = 30
+shadow_color = Color(1.1291975, 1.1291975, 1.1291975, 1)
+shadow_offset = Vector2(1, 3.72)

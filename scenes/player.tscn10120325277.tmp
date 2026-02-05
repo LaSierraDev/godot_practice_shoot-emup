@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://dg8vknnylcg5p"]
+
+[ext_resource type="Texture2D" uid="uid://dx2egewp8ik0o" path="res://assets/sprites/ship.png" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://bw0pi2n3r1lr" path="res://scripts/player.gd" id="1_g2els"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g2els"]
+radius = 28.0
+height = 74.0
+
+[node name="Player" type="CharacterBody2D" unique_id=546835743]
+script = ExtResource("1_g2els")
+speed = 450.0
+displaced_laser = null
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=952744878]
+rotation = 1.5707964
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("1_3vyb7")
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="." unique_id=1669783881]
+position = Vector2(-4, 1)
+polygon = PackedVector2Array(-26, -51, -18, -51, 42, -6, 42, 3, -18, 49, -26, 49, -25, 22, -35, 12, -35, -15, -25, -24)
+
+[node name="DetectionArea" type="Area2D" parent="." unique_id=139142035 groups=["player"]]
+position = Vector2(-17, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea" unique_id=496184534]
+position = Vector2(6, 0)
+shape = SubResource("CapsuleShape2D_g2els")
+
+[connection signal="area_entered" from="DetectionArea" to="." method="_on_detection_area_area_entered"]
