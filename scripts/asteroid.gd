@@ -18,6 +18,10 @@ func random(min_number, max_number):
 	rng.randomize() ## Inicializa el randomizador
 	return rng.randf_range(min_number, max_number)
 
+func destroy_me() -> void: 
+	_create_explotion()
+	queue_free()
+
 func _ready() -> void:
 	if speed == 0:
 		speed = rng.randf_range(min_random_speed, max_random_speed) 
@@ -29,10 +33,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	position.x += speed * delta
 	sprite_2d.rotation_degrees += speed_rotation * delta
-
-func destroy_me() -> void: 
-	_create_explotion()
-	queue_free()
 
 func _create_explotion() -> void:
 	var explotion_instance = explotion_scene.instantiate()
