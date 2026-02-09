@@ -11,7 +11,6 @@ var _there_is_power_up: bool
 func _ready() -> void:
 	_allocate_time(_randomized_time())
 	timer_spawn.start()
-	print("tiempo inicial de: " + str(timer_spawn.wait_time))
 
 func _randomized_time() -> float: 
 	return randf_range(random_spawn_seconds[0],random_spawn_seconds[1])

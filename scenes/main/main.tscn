@@ -3,8 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://dfhinowmubd5y" path="res://assets/sprites/background.png" id="1_hyk8p"]
 [ext_resource type="PackedScene" uid="uid://dg8vknnylcg5p" path="res://scenes/player.tscn" id="2_k2fmo"]
 [ext_resource type="PackedScene" uid="uid://cmykwu3xxtt0v" path="res://scenes/laser.tscn" id="3_hujxm"]
-[ext_resource type="PackedScene" uid="uid://b80w5b2di282r" path="res://scenes/Spawners/asteroid_spawner.tscn" id="4_ow5a4"]
-[ext_resource type="PackedScene" uid="uid://btjjmtc1x0kuc" path="res://scenes/Spawners/power_up_spawner.tscn" id="5_hujxm"]
+[ext_resource type="PackedScene" uid="uid://b80w5b2di282r" path="res://scenes/spawners/asteroid_spawner.tscn" id="4_ow5a4"]
+[ext_resource type="PackedScene" uid="uid://btjjmtc1x0kuc" path="res://scenes/spawners/power_up_spawner.tscn" id="5_hujxm"]
 [ext_resource type="PackedScene" uid="uid://cjitwvyiho5u5" path="res://scenes/ui/hud/UILayer.tscn" id="8_yyfjg"]
 [ext_resource type="PackedScene" uid="uid://cqwpmh7eosuq6" path="res://scenes/ui/gameover/game_over_ui.tscn" id="9_b1x3f"]
 
