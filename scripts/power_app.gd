@@ -8,6 +8,7 @@ func _on_area_entered(area: Area2D) -> void:
 func _destroy_all_asteroids():
 	var asteroids = get_tree().get_nodes_in_group("asteroides")
 	for node in asteroids:
+		node.add_score()
 		node.destroy_me()
 
 func _destroy_me():

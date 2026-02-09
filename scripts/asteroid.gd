@@ -22,6 +22,9 @@ func destroy_me() -> void:
 	_create_explotion()
 	queue_free()
 
+func add_score() -> void:
+	GameManager.add_score(points)
+
 func _ready() -> void:
 	if speed == 0:
 		speed = rng.randf_range(min_random_speed, max_random_speed) 
@@ -44,7 +47,7 @@ func _on_area_entered(area: Area2D) -> void:
 	var is_player: bool = area.is_in_group("player")
 	
 	if is_laser:
-		GameManager.add_score(points)
+		add_score()
 	
 	if is_laser or is_player:
 		destroy_me()
