@@ -6,8 +6,6 @@ extends Node2D
 @export var random_y: Array[float] = [5, 700]
 @export var random_spawn_seconds: Array[float] = [5, 20]
 
-var _there_is_power_up: bool 
-
 func _ready() -> void:
 	_allocate_time(_randomized_time())
 	timer_spawn.start()

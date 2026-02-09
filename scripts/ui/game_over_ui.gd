@@ -5,7 +5,7 @@ extends Control
 func _ready() -> void:
 	self.visible = false
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if GameManager.is_game_over:
 		self.visible = true
 		you_score_label.text = "You score: " + str(GameManager.score)

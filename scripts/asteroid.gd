@@ -2,6 +2,7 @@ extends Area2D
 
 @onready var rng: RandomNumberGenerator = RandomNumberGenerator.new()
 @onready var sprite_2d: Sprite2D = $Sprite2D
+@onready var explotion_scene: PackedScene = preload("res://scenes/particles/explosion.tscn")
 
 @export var min_random_speed: float = 300
 @export var max_random_speed: float = 100
@@ -30,7 +31,13 @@ func _process(delta: float) -> void:
 	sprite_2d.rotation_degrees += speed_rotation * delta
 
 func destroy_me() -> void: 
-		queue_free()
+	_create_explotion()
+	queue_free()
+
+func _create_explotion() -> void:
+	var explotion_instance = explotion_scene.instantiate()
+	add_sibling(explotion_instance)
+	explotion_instance.position = self.position
 
 func _on_area_entered(area: Area2D) -> void:
 	var is_laser: bool = area.is_in_group("laser")

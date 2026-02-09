@@ -13,7 +13,7 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	restart_game()
 
 func restart_game():
@@ -21,6 +21,7 @@ func restart_game():
 		get_tree().reload_current_scene()
 		is_game_over = false
 		score = 0
+
 func add_score(points: int) -> void:
 	if not is_game_over:
 		score += points
