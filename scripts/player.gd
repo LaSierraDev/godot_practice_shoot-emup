@@ -1,14 +1,16 @@
 extends CharacterBody2D
 
 @onready var timer_shoot: Timer = $TimerShoot
-@export var laser_scene: PackedScene 
-@export var speed: float
-@export var displaced_laser: float = 50
 
 var y_input: float
 var x_input: float
 
 var can_it_shoot: bool = true
+
+@export var laser_scene: PackedScene 
+@export var speed: float
+@export var displaced_laser: float = 50
+
 
 func _physics_process(_delta: float) -> void:
 	if GameManager.is_game_over:
